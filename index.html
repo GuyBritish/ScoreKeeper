@@ -1,26 +1,66 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
-	<meta charset="utf-8" viewport="width=device-width, initial-scale=1">
-	<title> Score Keeper </title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="ScoreKeeper.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="app.css"></link>
+    <title> Score Keeper </title>
 </head>
 
 <body>
-	<div class="container">
-	<div class="jumbotron">
-		<h1> <span id="P1">0</span> : <span id="P2">0</span> </h1>
-		<p> Playing to: <span id="mx_scr">5</span> </p>
-		<input type="number" name="MaxScore" id="MxScr_inp" placeholder="  Winning score">
-		<button class="btn btn-primary" id="pls1"> Player 1 </button>
-		<button class="btn btn-primary" id="pls2"> Player 2 </button>
-		<button class="btn btn-danger" id="reset"> Reset </button>
-	</div>	
-	</div>
-	<script type="text/javascript" src="ScoreKeeper.js"></script>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half is-offset-one-quarter">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-2by1">
+                                <img src="https://www.timeshighereducation.com/student/sites/default/files/styles/default/public/different_sports.jpg?itok=RUc5EW5U" alt="sport image">
+                            </figure>
+                        </div>
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                Score Keeper
+                            </p>
+                        </header>
+
+                        <div class="card-content">
+                            <div class="content">
+                                <h1 class="title is-1"> <span id="p1Disp"> 0 </span> to <span id="p2Disp"> 0 </span> </h1>
+                                <p class="subtitle"> Use the following buttons to keep score </p>
+
+                                <label class="label is-large is-inline" for="winScore"> Playing to: </label>
+                                <div class="select is-rounded">
+                                    <select name="winScore_inp" id="winScore"> 
+                                    <option value="1"> 1 </option>
+                                    <option value="2"> 2 </option>
+                                    <option value="3"> 3 </option>
+                                    <option value="4"> 4 </option>
+                                    <option value="5"> 5 </option>
+                                    <option value="6"> 6 </option>
+                                    <option value="7"> 7 </option>
+                                    <option value="8"> 8 </option>
+                                    <option value="9"> 9 </option>
+                                    <option value="10"> 10 </option>
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <button class="button is-primary card-footer-item" id="p1Btn"> Player 1 </button>
+                            <button class="button is-info card-footer-item" id="p2Btn"> Player 2 </button>
+                            <button class="button is-danger card-footer-item" id="resetBtn"> Reset </button>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="app.js"></script>
 </body>
 
 </html>
