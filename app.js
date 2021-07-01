@@ -17,8 +17,9 @@ function resetScore() {
     isGameOver = false;
     p1Disp.textContent = p1Score;
     p2Disp.textContent = p2Score;
-    p1Disp.classList.remove("win", "lose");
-    p2Disp.classList.remove("win", "lose");
+    p1Disp.classList.remove("has-text-success", "has-text-danger");
+    p2Disp.classList.remove("has-text-success", "has-text-danger");
+    p1Button.disabled = p2Button.disabled = false;
 }
 
 resetBtn.addEventListener("click", resetScore);
@@ -34,8 +35,10 @@ p1Button.addEventListener("click", () => {
     p1Disp.textContent = p1Score;
     if (p1Score >= winScore) {
         isGameOver = true;
-        p1Disp.classList.add("win");
-        p2Disp.classList.add("lose");
+        p1Disp.classList.add("has-text-success");
+        p2Disp.classList.add("has-text-danger");
+        p1Button.disabled = true;
+        p2Button.disabled = true;
     }
 });
 
@@ -45,7 +48,9 @@ p2Button.addEventListener("click", () => {
     p2Disp.textContent = p2Score;
     if (p2Score >= winScore) {
         isGameOver = true;
-        p1Disp.classList.add("lose");
-        p2Disp.classList.add("win");
+        p1Disp.classList.add("has-text-danger");
+        p2Disp.classList.add("has-text-success");
+        p1Button.disabled = true;
+        p2Button.disabled = true;
     }
 });
